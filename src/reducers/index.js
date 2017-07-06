@@ -8,14 +8,15 @@ const INITIAL_STATE = {
 };
 
 export const products = (state = INITIAL_STATE.products, { type, payload }) => {
-  debugger;
   switch (type) {
     case ACTION_TYPES.addProduct:
-      debugger;
       return [...state, payload.product];
+    case ACTION_TYPES.removeProduct:
+      return state.map(product => product)
+        .filter(product => product.id && product.id !== payload.product.id);
+    default:
+      return state;
   }
-
-  return state;
 };
 
 export default combineReducers({

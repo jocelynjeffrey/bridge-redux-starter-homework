@@ -1,9 +1,10 @@
 export const ACTION_TYPES = {
   addProduct: 'ADD_PRODUCTS',
+  removeProduct: 'REMOVE_PRODUCTS'
 };
 
 export function addProduct(product) {
-  debugger;
+  // debugger;
   return {
     type: ACTION_TYPES.addProduct,
     payload: {
@@ -11,3 +12,15 @@ export function addProduct(product) {
     }
   }
 }
+
+export function removeProduct(product) {
+  // debugger;
+  return {
+    type: ACTION_TYPES.removeProduct,
+    payload: {
+      product,
+    }
+  }
+}
+
+
